@@ -1,4 +1,5 @@
 "use strict";
+//header-dropdown
 let dropdownMenus = document.querySelectorAll(".dropdown1");
 dropdownMenus.forEach(function(dropdownMenu) {
     dropdownMenu.addEventListener("click", function(e) {
@@ -21,16 +22,4 @@ dropdownMenus.forEach(function(dropdownMenu) {
             dropdownUp.classList.add("d-none");
         }
     });
-});
-
-
-//sticky-menu
-
-window.addEventListener("scroll", function() {
-    var header = document.querySelector(".header-sticky-shop");
-    if (window.scrollY > 0) {
-        header.classList.add("visible");
-    } else {
-        header.classList.remove("visible");
-    }
 });

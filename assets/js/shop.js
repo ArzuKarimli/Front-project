@@ -1,3 +1,5 @@
+"use strict";
+
 let dropdownMenus = document.querySelectorAll(".dropdown1");
 dropdownMenus.forEach(function(dropdownMenu) {
     dropdownMenu.addEventListener("click", function(e) {

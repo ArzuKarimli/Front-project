@@ -1,3 +1,5 @@
+"use strict";
+
 //scroll-menu
 window.addEventListener("scroll", function() {
     var header = document.querySelector(".header-sticky");

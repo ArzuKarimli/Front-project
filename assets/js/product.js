@@ -1,3 +1,6 @@
+"use strict";
+
+
 let dropdownMenus = document.querySelectorAll(".dropdown1");
 dropdownMenus.forEach(function(dropdownMenu) {
     dropdownMenu.addEventListener("click", function(e) {
@@ -51,3 +54,26 @@ for (let i = 0; i < btns.length; i++) {
        document.querySelector(".image img").src = newSrc;
     });
  }
+
+ //tab-menu
+
+ let tabBtns = document.querySelectorAll(".tab-btns .tab-btn");
+let tabContents = document.querySelectorAll(".tabs-product .tab");
+
+tabBtns.forEach((tab, index) => {
+    tab.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        tabBtns.forEach(tab => {
+            tab.classList.remove("active");
+
+        this.classList.add("active");
+
+        tabContents.forEach(content => {
+            content.style.display = "none";
+        });
+
+        tabContents[index].style.display = "block";
+    });
+});
+});
