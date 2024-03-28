@@ -9,6 +9,60 @@
 body {
   position: relative;
 }
+body #sidebar-area .sidebar {
+  height: 100vh !important;
+  width: 320px;
+  padding: 25px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  z-index: 999;
+}
+body #sidebar-area .sidebar-title {
+  display: flex;
+  justify-content: space-between;
+}
+body #sidebar-area .sidebar-title h4 {
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+body #sidebar-area .sidebar-title i {
+  cursor: pointer;
+}
+body #sidebar-area .sidebar-title i:hover {
+  transform: rotate(90deg);
+  transition: all 0.5s;
+}
+body #sidebar-area .sidebar hr {
+  margin-bottom: 40px;
+}
+body #sidebar-area .sidebar .empty-cart {
+  margin-top: 150px;
+}
+body #sidebar-area .sidebar p {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 40px;
+}
+body #sidebar-area .sidebar .shop-btn {
+  background-color: #f6f7f9;
+  font-size: 15px;
+  text-transform: capitalize;
+  color: #010f1c;
+  padding: 10px 30px;
+  text-align: center;
+  margin-left: 70px;
+}
+body #sidebar-area .sidebar .shop-btn:hover {
+  background-color: #010f1c;
+  color: white;
+}
+body #sidebar-area .move-sidebar {
+  transform: translate(320px, 0);
+}
 body .header-sticky {
   position: fixed;
   display: flex;

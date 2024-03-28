@@ -25,7 +25,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./assets/css/contact.css">
+    <link rel="stylesheet" href="./assets/css/sign.css">
     <link rel="icon" type="image/x-icon" href="./assets/images/shofy.png">
 </head>
 
@@ -281,16 +281,16 @@
         </div>
     </header>
     <main>
-        <section id="contact-page-title-area">
+        <section id="login-title-area">
             <div class="page-title">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="title">
-                                <h3>Keep In Touch with Us</h3>
+                                <h3>My Account</h3>
                                 <div class="title-down">
                                     <a href="">Home</a>
-                                    <span>Contact</span>
+                                    <span>My account</span>
                                 </div>
                             </div>
                         </div>
@@ -298,15 +298,34 @@
                 </div>
             </div>
         </section>
-        <section id="contact-info-area">
+        <section id="login-area">
+            <div class="login-icons">
+                <img src="./assets/images/login-shape-1.png" alt="" class="img1">
+                <img src="./assets/images/login-shape-2.png" alt="" class="img2">
+                <img src="./assets/images/login-shape-3.png" alt="" class="img3">
+                <img src="./assets/images/login-shape-4.png" alt="" class="img4">
+            </div>
             <div class="container">
                 <div class="row">
-                    <div class="contact">
-                        <div class="row">
-                            <div class="col-12 col-sm-12 col-md-8">
-                                <div class="info">
-                                    <h3>Sent A Message</h3>
-
+                    <div class="box">
+                        <div class="login-box">
+                            <h3>Sign Up Shofy.</h3>
+                            <p>Already have an account? <a href="" class="sign">Sign In</a></p>
+                            <div class="input-area">
+                                <a href="">
+                                    <img src="./assets/images/google.svg" alt="">
+                                    Sign in with google
+                                </a>
+                                <a href="" class="facebook">
+                                    <img src="./assets/images/facebook.svg" alt="">
+                                </a>
+                                <a href="" class="apple">
+                                    <img src="./assets/images/apple.svg" alt="">
+                                </a>
+                                <div class="text">
+                                    <p>or Sign in with Email</p>
+                                </div>
+                                <div class="forms ">
                                     <div class="text-area mt-4">
                                         <label for="">Your Name</label>
                                         <input type="text" placeholder="Shahnewaz Sakil" class="name">
@@ -318,47 +337,22 @@
 
                                     </div>
                                     <div class="text-area mt-4">
-                                        <label for="">Subject</label>
-                                        <input type="text" placeholder="Write your subject" class="name">
+                                        <label for="">Password</label>
+                                        <input type="password" placeholder="Min. 6 caracter" class="password">
+                                        <img src="./assets/images/Login Page-8.svg" alt="" class="login-img">
+                                    </div>
+                                    <div class="text-area checkbox mt-4">
 
-                                    </div>
-                                    <div class="text-area mt-4">
-                                        <label for="">Your Message</label>
-                                        <textarea rows="4" cols="50"
-                                            placeholder="Write your message here..."></textarea>
-
-                                    </div>
-                                    <div class="text-area mt-4">
-                                        <label for="" class="check-text">Save my name, email, and website in this
-                                            browser for the next time I comment.</label>
-                                        <input type="checkbox" class="check">
-
-
-                                    </div>
-                                    <button class="submit">Send Message</button>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-12 col-md-4">
-                                <div class="contact-items">
-                                    <div class="contact-number">
-                                        <img src="./assets/images/contact-icon-1.png" alt="">
-                                        <p class="email">contact@shofy.com</p>
-                                        <p class="number">+670 413 90 762</p>
-                                    </div>
-                                    <div class="contact-number">
-                                        <img src="./assets/images/contact-icon-2.png" alt="">
-                                        <p class="address">84 sleepy hollow st. <br>
-                                            jamaica, New York 1432</p>
-                                    </div>
-                                    <div class="contact-number">
-                                        <img src="./assets/images/contact-icon-3.png" alt="">
-                                        <span>Find on social media</span>
-                                        <div class="social">
-                                            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-                                            <a href=""><i class="fa-brands fa-twitter"></i></a>
-                                            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                                        <div class="remember"><input type="checkbox" class="check">
+                                            <span class="check-text">Remember me</span>
+                                        </div>
+                                        <div class="forgot">
+                                            <span>Forgot Password?</span>
                                         </div>
                                     </div>
+
+
+                                    <button class="submit">Login</button>
                                 </div>
                             </div>
                         </div>
@@ -456,6 +450,7 @@
             </div>
         </footer>
     </main>
+    <script src="./assets/js/sign.js"></script>
 </body>
 
 </html>

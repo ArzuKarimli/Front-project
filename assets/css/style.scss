@@ -13,7 +13,71 @@ $yellow-color-1: #FFB342;
 
 body {
     position: relative;
-   
+    
+    #sidebar-area {
+        .sidebar {
+          height: 100vh !important;
+          width: 320px;
+          padding: 25px;
+          position: fixed;
+          top: 0;
+          right: 0;
+          background-color: white;
+          z-index: 999;
+      
+          &-title {
+            display: flex;
+            justify-content: space-between;
+            h4 {
+              font-size: 16px;
+              text-transform: capitalize;
+              font-weight: 600;
+              margin-bottom: 0;
+            }
+            i {
+              cursor: pointer;
+              
+              &:hover{
+                transform: rotate(90deg);
+                transition: all 0.5s;
+              }
+            }
+          }
+      
+          hr {
+            margin-bottom: 40px;
+          }
+      
+          .empty-cart {
+            margin-top: 150px;
+          }
+      
+          p {
+            text-align: center;
+            font-size: 16px;
+            margin-top: 40px;
+          }
+      
+          .shop-btn {
+            background-color: #f6f7f9;
+            font-size: 15px;
+            text-transform: capitalize;
+            color: #010f1c;
+            padding: 10px 30px;
+            text-align: center;
+            margin-left: 70px;
+            &:hover {
+              background-color: #010f1c;
+              color: white;
+            }
+          }
+        }
+      
+        .move-sidebar {
+            transform: translate(320px, 0);
+          }
+      }
+      
 
     .header-sticky {
         position: fixed;
@@ -29,49 +93,51 @@ body {
         visibility: hidden;
         opacity: 0;
         top: -100%;
-         img{
+
+        img {
             margin-top: 10px;
-         }
+        }
+
         .nav {
             .navbar {
                 .navbar-menu {
                     display: flex;
                     height: 100%;
                     align-items: center;
-    
+
                     li {
                         list-style: none;
                         padding-left: 23px;
-    
+
                         a {
                             text-decoration: none;
                             color: #55585B;
                             font-size: 14px;
                             font-weight: bold;
-    
+
                             &:hover {
                                 color: #0989FF;
                                 transition: all 0.3s;
                             }
-    
+
                             i {
                                 font-size: 10px;
                             }
                         }
                     }
-    
+
                     .products {
                         position: relative;
                         display: flex;
                         justify-content: center;
-    
+
                         &:hover .products-dropdown {
                             visibility: visible;
                             opacity: 1;
                             transition-duration: 0.1s;
                             transform: perspective(300px) rotateX(0deg);
                         }
-    
+
                         .products-dropdown {
                             position: absolute;
                             margin-left: 133px;
@@ -87,34 +153,35 @@ body {
                             transform-origin: center top;
                             transition-duration: 0.2s;
                             transform: perspective(300px) rotateX(-18deg);
-    
+
                             .products-list {
                                 width: 100%;
                                 height: 100%;
                                 display: flex;
                                 align-items: center;
-    
+
                                 .list-name {
                                     color: #737577;
                                     margin-left: 54px;
                                     font-weight: 500;
                                     font-size: 15px;
                                     display: inline-block;
-    
+
                                     &:hover {
                                         color: #0989FF;
                                         transition: all 0.3s;
                                         cursor: pointer;
                                     }
                                 }
-    
+
                                 ul {
                                     li {
                                         padding-top: 5px;
+
                                         a {
                                             color: #767A7D;
                                             font-weight: 400;
-    
+
                                             &:hover {
                                                 color: #0989FF;
                                                 transition: all 0.3s;
@@ -128,25 +195,26 @@ body {
                 }
             }
         }
-    
+
         .wish-basket {
             display: flex;
             align-items: center;
             justify-content: end;
             height: 100%;
             width: 100%;
-    
+
             img {
                 margin-left: 15px;
-    
+
                 &:hover {
                     transition: all 0.3s;
                     filter: invert(47%) sepia(90%) saturate(1749%) hue-rotate(160deg) brightness(92%) contrast(101%);
                 }
             }
-    
+
             .heart {
                 position: relative;
+
                 .count-wish {
                     span {
                         width: 23px;
@@ -164,9 +232,10 @@ body {
                     }
                 }
             }
-    
+
             .basket {
                 position: relative;
+
                 .count-basket {
                     span {
                         width: 23px;
@@ -185,7 +254,7 @@ body {
                 }
             }
         }
-    
+
         &.visible {
             top: 0;
             visibility: visible;
@@ -193,7 +262,7 @@ body {
             animation: .5s ease-in-out 0s normal none 1 running fadeInDown;
         }
     }
-    
+
     .header-up {
         width: 100%;
         height: 34px;
@@ -483,7 +552,7 @@ body {
                 display: flex;
                 margin-right: 20px;
 
-                 .person-circle {
+                .person-circle {
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -828,12 +897,12 @@ body {
             height: 480px;
             background-color: #115061;
             position: relative;
-            display: none; 
-    
+            display: none;
+
             &.active {
-                display: block; 
+                display: block;
             }
-    
+
             .back-images {
                 .back-image1 {
                     position: absolute;
@@ -843,29 +912,29 @@ body {
                     opacity: 0.1;
                     z-index: 1;
                 }
-    
+
                 .back-image2 {
                     position: absolute;
                     top: 8%;
                     right: 33%;
                 }
-    
+
                 .back-image3 {
                     position: absolute;
                     top: 30%;
                     left: 6%;
                 }
             }
-    
+
             .slider-images {
                 width: 100%;
                 height: 100%;
                 display: flex;
                 align-items: center;
-    
+
                 .slider-text {
                     margin-top: 55px;
-    
+
                     span {
                         display: inline-block;
                         font-size: 16px;
@@ -875,7 +944,7 @@ body {
                         animation-name: fadeInDown;
                         animation-fill-mode: both;
                     }
-    
+
                     .slider-title {
                         font-weight: 900;
                         font-size: 56px;
@@ -890,7 +959,7 @@ body {
                         animation-name: fadeInDown;
                         animation-fill-mode: both;
                     }
-    
+
                     .exclusive {
                         color: white;
                         font-family: 'oregano';
@@ -901,7 +970,7 @@ body {
                         animation-duration: 1s;
                         animation-name: fadeInDown;
                         animation-fill-mode: both;
-    
+
                         .slider-content {
                             display: inline-block;
                             color: #FFD43A;
@@ -910,7 +979,7 @@ body {
                             font-size: 28px;
                             bottom: -20px;
                             position: relative;
-    
+
                             img {
                                 position: absolute;
                                 top: 35px;
@@ -922,7 +991,7 @@ body {
                         }
                     }
                 }
-    
+
                 .slider-btn button {
                     background-color: white;
                     width: 144px;
@@ -939,7 +1008,7 @@ body {
                     animation-duration: 1s;
                     animation-name: fadeInDown;
                     animation-fill-mode: both;
-    
+
                     &:hover {
                         border: 1px solid white;
                         background-color: #115061;
@@ -947,11 +1016,11 @@ body {
                         transition: all 0.3s;
                     }
                 }
-    
+
                 .slider-right-img {
                     width: 100%;
                     height: 100%;
-    
+
                     img {
                         float: right;
                         animation-delay: .9s;
@@ -962,23 +1031,23 @@ body {
                 }
             }
         }
-    
+
         .dots-containerm {
             position: absolute;
             top: 8%;
             transform: translateY(-50%);
             left: 50%;
-    
+
             .dotm {
                 cursor: pointer;
                 height: 12px;
                 width: 12px;
-                
+
                 background-color: #fff3;
                 border-radius: 50%;
                 display: inline-block;
                 margin-top: 3px;
-    
+
                 &.active {
                     background-color: white !important;
                 }
@@ -2562,9 +2631,9 @@ body {
 
                 .slick-slide {
                     width: 261px !important;
-                    
+
                     margin: 0 10px;
-                   
+
                 }
 
                 .product-card {
@@ -3410,8 +3479,9 @@ body {
                     color: var(--tp-text-5);
                     margin-bottom: 0;
                 }
-                .footer-payment{
-                    img{
+
+                .footer-payment {
+                    img {
                         float: right;
                     }
                 }

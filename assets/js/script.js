@@ -227,3 +227,27 @@ $(document).ready(function(){
         ]
     });
 });
+
+//sidebar
+
+
+    let basketBtn = document.querySelector(".open-btn");
+    console.log(basketBtn);
+    let sidebarCloseBtn = document.querySelector(".close-btn .fa-x");
+    console.log(sidebarCloseBtn);
+    let sidebar = document.querySelector(".sidebar");
+    console.log(sidebar);
+
+    basketBtn.addEventListener("click", function() {
+      if (sidebar.classList.contains("move-sidebar")) {
+        sidebar.classList.remove("move-sidebar");
+      }
+      
+    });
+
+    sidebarCloseBtn.addEventListener("click", function() {
+      if (!sidebar.classList.contains("move-sidebar")) {
+        sidebar.classList.add("move-sidebar");
+      }
+     
+    });
