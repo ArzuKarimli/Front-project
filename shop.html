@@ -118,10 +118,10 @@
                             </div>
                             <div class="wish-basket">
                                 <img src="./assets/images/svg-image-4.svg" alt="">
-                                <div class="heart"><img src="./assets/images/svg-image-5.svg" alt="">
+                                <div class="heart"><a href="./wishlist.html"><img src="./assets/images/svg-image-5.svg" alt="" ></a>
                                     <div class="count-wish"><span>0</span></div>
                                 </div>
-                                <div class="basket"><img src="./assets/images/svg-image-6.svg" alt="">
+                                <div class="basket"><img src="./assets/images/svg-image-6.svg" alt="" class="open-btn">
                                     <div class="count-basket"><span>0</span></div>
                                 </div>
                             </div>
@@ -268,10 +268,10 @@
                             </div>
                             <div class="wish-basket">
                                 <img src="./assets/images/svg-image-4.svg" alt="">
-                                <div class="heart"><img src="./assets/images/svg-image-5.svg" alt="">
+                                <div class="heart"><a href="./wishlist.html"><img src="./assets/images/svg-image-5.svg" alt=""></a>
                                     <div class="count-wish"><span>0</span></div>
                                 </div>
-                                <div class="basket"><img src="./assets/images/svg-image-6.svg" alt="">
+                                <div class="basket"><img src="./assets/images/svg-image-6.svg" alt="" class="open-btn">
                                     <div class="count-basket"><span>0</span></div>
                                 </div>
                             </div>
@@ -282,6 +282,42 @@
         </div>
     </header>
     <main>
+        <section id="sidebar-area">
+            <div class="sidebar move-sidebar">
+                <div class="sidebar-title">
+                    <h4>Shopping cart</h4>
+                    <div class="close-btn"> <i class="fa-solid fa-x"></i></div>
+                </div>
+                <hr>
+                <hr>
+                <div class="full-basket">
+
+
+                    <div class="subtotal">
+                        <div class="total-price">
+                            <p>Subtotal:</p>
+                            <span data-id="">140</span>
+
+                        </div>
+                        <div class="checkout-btn">
+                            <a href="./cart.html" class="view-cart">View Cart</a>
+                            <a href="#" class="checkout">Checkout</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="empty-basket d-none">
+                    <div class="empty-cart">
+                        <img src="./assets/images/empty-cart.png" alt="">
+                    </div>
+                    <p>Your Cart is empty</p>
+                    <a href="./shop.html">
+                        <button class="shop-btn">Go To Shop</button>
+                    </a>
+                </div>
+            </div>
+        </section>
         <section id="shop-grid-area">
             <div class="container">
                 <div class="row">

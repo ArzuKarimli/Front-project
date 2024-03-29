@@ -10,7 +10,11 @@ body {
   position: relative;
 }
 body #sidebar-area .sidebar {
-  height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  height: 100vh;
   width: 320px;
   padding: 25px;
   position: fixed;
@@ -39,6 +43,9 @@ body #sidebar-area .sidebar-title i:hover {
 body #sidebar-area .sidebar hr {
   margin-bottom: 40px;
 }
+body #sidebar-area .sidebar .full-basket {
+  flex-grow: 1;
+}
 body #sidebar-area .sidebar .full-basket .inbasket {
   display: flex;
 }
@@ -59,7 +66,7 @@ body #sidebar-area .sidebar .full-basket .inbasket .product-name {
   text-align: center;
 }
 body #sidebar-area .sidebar .full-basket .inbasket .product-name a {
-  font-size: 15px;
+  font-size: 12px;
   margin-bottom: 4px;
   font-weight: 500;
   color: #010F1C;
@@ -83,10 +90,15 @@ body #sidebar-area .sidebar .full-basket .inbasket .delete-product i {
   font-size: 12px;
 }
 body #sidebar-area .sidebar .full-basket .subtotal {
-  margin-top: 40px;
+  position: absolute;
+  background-color: white;
+  z-index: 99;
+  bottom: -40px;
   width: 100%;
   height: 260px;
+  left: 10px;
   border-top: 1px solid #EAEBED;
+  padding-right: 25px;
 }
 body #sidebar-area .sidebar .full-basket .subtotal .total-price {
   display: flex;
@@ -575,6 +587,9 @@ body .header-down .account .sign-register .sign-text span {
   font-size: 12px;
   color: #767A7D;
   font-weight: 500;
+}
+body .header-down .account .sign-register .sign-text a {
+  text-decoration: none;
 }
 body .header-down .account .sign-register .sign-text p {
   font-size: 14px;
@@ -2873,6 +2888,23 @@ body .footer-area .footer-bottom .bottom .footer-payment img {
   float: right;
 }
 
+@media only screen and (max-width: 600px) {
+  .header-sticky .nav {
+    visibility: hidden;
+  }
+  .header-down .search-box {
+    visibility: hidden;
+  }
+  .header-down .account {
+    visibility: hidden;
+  }
+  .header-down-menu .nav {
+    visibility: hidden;
+  }
+  .header-down-menu .contact {
+    visibility: hidden;
+  }
+}
 @keyframes fadeInDown {
   0% {
     opacity: 0;

@@ -163,3 +163,241 @@ const check = (event) => {
 rangeBlock.addEventListener('mousedown', check);
 rangeBlock.addEventListener('touchstart', check);
 
+let basket = [];
+
+
+if (JSON.parse(localStorage.getItem("basket")) === null) {
+    localStorage.setItem("basket", JSON.stringify(basket));
+} else {
+    basket = JSON.parse(localStorage.getItem("basket"));
+}
+
+function updateBasketCount() {
+    let basketCount = basket.reduce((total, item) => total + item.count, 0);
+    document.querySelectorAll(".count-basket span").forEach(span => {
+        span.innerText = basketCount;
+    });
+    updateSidebarOnBasketChange();
+}
+
+
+function assignDataIds() {
+    let productCards = document.querySelectorAll('.product-card');
+    productCards.forEach((card, index) => {
+        card.dataset.id = index + 1;
+    });
+}
+
+document.querySelectorAll(".card-action .basket").forEach(btn => {
+    btn.addEventListener("click", function (e) {
+        let productId = parseInt(this.parentNode.parentNode.parentNode.getAttribute("data-id"));
+        let productName = this.parentNode.parentNode.nextElementSibling.firstElementChild.nextElementSibling.innerText;       
+        let productImage = this.parentNode.nextElementSibling.getAttribute("src");        
+        let productPrice = parseFloat(this.parentNode.parentNode.nextElementSibling.lastElementChild.lastElementChild.textContent);
+        
+        let existProduct = basket.find(m => m.id == productId);
+
+        if (existProduct !== undefined) {
+            existProduct.count++;
+        } else {
+            basket.push({
+                id: productId,
+                name: productName,
+                image: productImage,
+                price: productPrice,
+                count: 1
+            });
+        }
+
+        updateBasketCount();
+        updateSidebarOnBasketChange(); 
+        localStorage.setItem("basket", JSON.stringify(basket));
+    });
+});
+
+document.querySelectorAll(".card-action .basket").forEach(btn => {
+    btn.addEventListener("click", function (e) {          
+        this.style.backgroundColor = "#0989FF";   
+        let basketImg = this.querySelector("img");
+        basketImg.style.filter = "invert(100%)";
+
+    });
+});
+
+//wishlist
+let wishlist = [];
+let wishlistCount = 0; 
+
+if (JSON.parse(localStorage.getItem("wishlist")) !== null) {
+    wishlist = JSON.parse(localStorage.getItem("wishlist"));
+    wishlistCount = wishlist.length;
+    updateWishlistCount();
+}else{
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+}
+
+
+function updateWishlistCount() {
+    document.querySelectorAll(".count-wish span").forEach(span => {
+        span.innerText = wishlistCount;
+    });
+}
+
+function assignDataIds() {
+    let productCards = document.querySelectorAll('.product-card');
+    productCards.forEach((card, index) => {
+        card.dataset.id = index + 1;
+    });
+}
+document.querySelectorAll(".card-action .heart").forEach((heart, index) => {
+    heart.addEventListener("click", function (e) {
+        let productId = index + 1;
+        let existingIndex = wishlist.findIndex(item => item.id === productId);           
+        let productName = this.parentNode.parentNode.nextElementSibling.firstElementChild.nextElementSibling.innerText;                  
+        let productImage = this.parentNode.nextElementSibling.getAttribute("src");                    
+        let productPrice = parseFloat(this.parentNode.parentNode.nextElementSibling.lastElementChild.lastElementChild.textContent);
+                
+        if (existingIndex !== -1) {
+            wishlist.splice(existingIndex, 1);
+            wishlistCount--;
+            if (this.style.backgroundColor !== "") {
+                this.style.backgroundColor = "";
+                let wishlistImg = this.querySelector("img");
+                wishlistImg.style.filter = "";
+            }
+        } else {
+            wishlist.push({
+                id: productId,
+                name: productName,
+                image: productImage,
+                price: productPrice,
+            });
+            wishlistCount++;
+            this.style.backgroundColor = "#0989FF";
+            let wishlistImg = this.querySelector("img");
+            wishlistImg.style.filter = "invert(100%)";
+        }            
+        updateWishlistCount(); 
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    });
+});
+
+
+
+// document.querySelectorAll(".card-action .heart").forEach(btn => {
+//     btn.addEventListener("click", function (e) {          
+//         this.style.backgroundColor = "#0989FF";   
+//         let wishlistImg = this.querySelector("img");
+//         wishlistImg.style.filter = "invert(100%)";
+
+//     });
+// });
+
+    assignDataIds();
+    updateBasketCount();
+
+function displayCartInSidebar() {
+let sidebarContent = document.querySelector('.full-basket');
+if (basket.length > 0) {
+    let cartItems = '';
+
+    basket.forEach(item => {
+        cartItems += `
+        <div class="inbasket">
+            <div class="product-img"><img src="${item.image}" alt=""></div>
+            <div class="product-name"><a href="">${item.name}</a>
+                <div class="product-price">
+                    <span>${item.price * item.count}</span><span>x${item.count}</span>
+                </div>
+            </div>
+            <div class="delete-product">
+                <i class="fa-solid fa-x delete-icon" data-id="${item.id}"></i>
+            </div>
+        </div>`;
+    });
+
+    let total = basket.reduce((acc, curr) => acc + (curr.price * curr.count), 0);
+
+    sidebarContent.innerHTML = `
+    ${cartItems}
+    <div class="subtotal">
+        <div class="total-price">
+            <p>Subtotal:</p>
+            <span data-id="">${total}</span>
+        </div>
+        <div class="checkout-btn">
+            <a href="./cart.html" class="view-cart">View Cart</a>
+            <a href="#" class="checkout">Checkout</a>
+        </div>
+    </div>`;
+} else {
+    
+    sidebarContent.innerHTML = `
+    <div class="empty-basket">
+        <div class="empty-cart">
+            <img src="./assets/images/empty-cart.png" alt="">
+        </div>
+        <p>Your Cart is empty</p>
+        <a href="./shop.html">
+            <button class="shop-btn">Go To Shop</button>
+        </a>
+    </div>`;
+}
+}
+
+function updateSidebarOnBasketChange() {
+displayCartInSidebar();
+localStorage.setItem("basket", JSON.stringify(basket));
+}
+
+displayCartInSidebar();
+
+
+
+// function removeProductFromCart(productId) {
+
+//     basket = basket.filter(item => item.id !== productId);
+
+//     localStorage.setItem("basket", JSON.stringify(basket));
+
+//     displayCartInSidebar();
+//     updateBasketCount();
+//     updateSidebarOnBasketChange();
+// }
+
+document.querySelectorAll(".delete-icon").forEach(icon => {
+icon.addEventListener("click", function () {
+    basket = basket.filter(m => m.id != parseInt(this.getAttribute("data-id")));
+    localStorage.setItem("basket", JSON.stringify(basket));
+    this.parentNode.parentNode.remove();   
+    displayCartInSidebar();
+    updateBasketCount();
+    updateSidebarOnBasketChange();
+
+});
+});
+
+//sidebar
+
+
+let basketBtn = document.querySelectorAll(".open-btn");
+    
+let sidebarCloseBtn = document.querySelectorAll(".close-btn .fa-x");
+
+let sidebar = document.querySelector(".sidebar");
+
+basketBtn.forEach(btn => {
+btn.addEventListener("click",function(){
+    if (sidebar.classList.contains("move-sidebar")) {
+        sidebar.classList.remove("move-sidebar");
+      }
+})
+});
+
+sidebarCloseBtn.forEach(btn => {
+btn.addEventListener("click",function(){
+    if (!sidebar.classList.contains("move-sidebar")) {
+        sidebar.classList.add("move-sidebar");
+      }
+})
+});

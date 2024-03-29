@@ -9,6 +9,176 @@
 body {
   position: relative;
 }
+body #sidebar-area .sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  height: 100vh;
+  width: 320px;
+  padding: 25px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  z-index: 999;
+}
+body #sidebar-area .sidebar-title {
+  display: flex;
+  justify-content: space-between;
+}
+body #sidebar-area .sidebar-title h4 {
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+body #sidebar-area .sidebar-title i {
+  cursor: pointer;
+}
+body #sidebar-area .sidebar-title i:hover {
+  transform: rotate(90deg);
+  transition: all 0.5s;
+}
+body #sidebar-area .sidebar hr {
+  margin-bottom: 40px;
+}
+body #sidebar-area .sidebar .full-basket {
+  flex-grow: 1;
+}
+body #sidebar-area .sidebar .full-basket .inbasket {
+  display: flex;
+}
+body #sidebar-area .sidebar .full-basket .inbasket .product-img {
+  width: 60px;
+  height: 70px;
+  border: 1px solid #EAEBED;
+  margin-right: 15px;
+}
+body #sidebar-area .sidebar .full-basket .inbasket .product-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body #sidebar-area .sidebar .full-basket .inbasket .product-name {
+  width: 120px;
+  text-align: center;
+}
+body #sidebar-area .sidebar .full-basket .inbasket .product-name a {
+  font-size: 12px;
+  margin-bottom: 4px;
+  font-weight: 500;
+  color: #010F1C;
+  text-decoration: none;
+}
+body #sidebar-area .sidebar .full-basket .inbasket .product-name a:hover {
+  color: #0989FF;
+}
+body #sidebar-area .sidebar .full-basket .inbasket .product-name .product-price span {
+  color: #4a4d50;
+  font-size: 14px;
+}
+body #sidebar-area .sidebar .full-basket .inbasket .product-name .product-price span:nth-child(1) {
+  color: #0989FF;
+}
+body #sidebar-area .sidebar .full-basket .inbasket .delete-product {
+  padding-left: 50px;
+  text-align: end;
+}
+body #sidebar-area .sidebar .full-basket .inbasket .delete-product i {
+  font-size: 12px;
+}
+body #sidebar-area .sidebar .full-basket .subtotal {
+  position: absolute;
+  background-color: white;
+  z-index: 99;
+  bottom: -40px;
+  width: 100%;
+  height: 260px;
+  left: 10px;
+  border-top: 1px solid #EAEBED;
+  padding-right: 25px;
+}
+body #sidebar-area .sidebar .full-basket .subtotal .total-price {
+  display: flex;
+  justify-content: space-between;
+}
+body #sidebar-area .sidebar .full-basket .subtotal .total-price p {
+  font-size: 15px;
+  display: inline-block;
+  font-weight: 500;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  color: #010F1C;
+}
+body #sidebar-area .sidebar .full-basket .subtotal .checkout-btn {
+  margin-top: 50px;
+}
+body #sidebar-area .sidebar .full-basket .subtotal .checkout-btn .view-cart {
+  font-size: 15px;
+  text-transform: capitalize;
+  padding: 10px 30px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  height: 48px;
+  font-weight: 400;
+  text-decoration: none;
+  background-color: #010F1C;
+  padding: 9px 26px;
+  color: white;
+  border: 1px solid #010F1C;
+}
+body #sidebar-area .sidebar .full-basket .subtotal .checkout-btn .view-cart:hover {
+  background-color: #0989FF;
+  border-color: #0989FF;
+}
+body #sidebar-area .sidebar .full-basket .subtotal .checkout-btn .checkout {
+  margin-top: 15px;
+  font-size: 15px;
+  text-transform: capitalize;
+  padding: 10px 30px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  height: 48px;
+  font-weight: 400;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 9px 26px;
+  color: #4a4d50;
+  border: 1px solid #010F1C;
+}
+body #sidebar-area .sidebar .full-basket .subtotal .checkout-btn .checkout:hover {
+  background-color: #0989FF;
+  color: white;
+  border-color: #0989FF;
+}
+body #sidebar-area .sidebar .empty-basket .empty-cart {
+  margin-top: 150px;
+}
+body #sidebar-area .sidebar .empty-basket p {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 40px;
+}
+body #sidebar-area .sidebar .empty-basket .shop-btn {
+  background-color: #f6f7f9;
+  font-size: 15px;
+  text-transform: capitalize;
+  color: #010f1c;
+  padding: 10px 30px;
+  text-align: center;
+  margin-left: 70px;
+}
+body #sidebar-area .sidebar .empty-basket .shop-btn:hover {
+  background-color: #010f1c;
+  color: white;
+}
+body #sidebar-area .move-sidebar {
+  transform: translate(320px, 0);
+}
 body .header-sticky-shop {
   position: fixed;
   display: flex;
