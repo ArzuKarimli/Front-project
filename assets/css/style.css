@@ -1027,6 +1027,7 @@ body #feature-area .feature .feature-box {
   border-bottom-left-radius: 8px;
   padding: 29px 15px;
   display: flex;
+  flex-wrap: wrap;
 }
 body #feature-area .feature .feature-box .feature-box-img {
   width: 33px;
@@ -1114,6 +1115,7 @@ body #trending-products .trends .trending-tab ul .active a {
 body #trending-products .trend-products {
   margin-top: 30px;
   display: none;
+  flex-wrap: wrap;
 }
 body #trending-products .trend-products .product-card {
   width: 261px;
