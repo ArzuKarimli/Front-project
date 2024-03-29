@@ -320,7 +320,10 @@ $(document).ready(function(){
         wishlist = JSON.parse(localStorage.getItem("wishlist"));
         wishlistCount = wishlist.length;
         updateWishlistCount();
+    }else{
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
     }
+ 
     
     function updateWishlistCount() {
         document.querySelectorAll(".count-wish span").forEach(span => {
@@ -328,17 +331,34 @@ $(document).ready(function(){
         });
     }
     
-    
+    function assignDataIds() {
+        let productCards = document.querySelectorAll('.product-card');
+        productCards.forEach((card, index) => {
+            card.dataset.id = index + 1;
+        });
+    }
     document.querySelectorAll(".card-action .heart").forEach((heart, index) => {
         heart.addEventListener("click", function (e) {
             let productId = index + 1;
             let existingIndex = wishlist.findIndex(item => item.id === productId);
-    
+         
+            let productName = this.parentNode.parentNode.nextElementSibling.firstElementChild.nextElementSibling.innerText;   
+              
+            let productImage = this.parentNode.nextElementSibling.getAttribute("src"); 
+               
+            let productPrice = parseFloat(this.parentNode.parentNode.nextElementSibling.lastElementChild.lastElementChild.textContent);
+           
             if (existingIndex !== -1) {
                 wishlist.splice(existingIndex, 1);
                 wishlistCount--;
             } else {
-                wishlist.push({ id: productId });
+                wishlist.push({
+                    id: productId,
+                    name: productName,
+                    image: productImage,
+                    price: productPrice,
+                   
+                });
                 wishlistCount++;
             }
     
