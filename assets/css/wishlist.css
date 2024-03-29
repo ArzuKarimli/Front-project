@@ -587,6 +587,15 @@ body #shopping-cart .product-tables table thead tr .quantity {
   padding-bottom: 9px !important;
   padding-left: 14px;
 }
+body #shopping-cart .product-tables table thead tr .action {
+  font-weight: 500;
+  font-size: 14px;
+  color: #010F1C;
+  border: 0 !important;
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
+  padding-left: 14px;
+}
 body #shopping-cart .product-tables table tbody tr .cart-image {
   padding-top: 30px !important;
   padding-bottom: 30px !important;
@@ -789,4 +798,4 @@ body .footer-area .footer-bottom .bottom span {
 }
 body .footer-area .footer-bottom .bottom .footer-payment img {
   float: right;
-}/*# sourceMappingURL=cart.css.map */
+}/*# sourceMappingURL=wishlist.css.map */

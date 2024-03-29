@@ -232,11 +232,11 @@ $(document).ready(function(){
 
 
     let basketBtn = document.querySelector(".open-btn");
-    console.log(basketBtn);
+    
     let sidebarCloseBtn = document.querySelector(".close-btn .fa-x");
-    console.log(sidebarCloseBtn);
+    
     let sidebar = document.querySelector(".sidebar");
-    console.log(sidebar);
+  
 
     basketBtn.addEventListener("click", function() {
       if (sidebar.classList.contains("move-sidebar")) {
@@ -251,3 +251,117 @@ $(document).ready(function(){
       }
      
     });
+
+    //basket
+
+    let basket = [];
+
+
+    if (JSON.parse(localStorage.getItem("basket")) === null) {
+        localStorage.setItem("basket", JSON.stringify(basket));
+    } else {
+        basket = JSON.parse(localStorage.getItem("basket"));
+    }
+    
+    function updateBasketCount() {
+        let basketCount = basket.reduce((total, item) => total + item.count, 0);
+        document.querySelectorAll(".count-basket span").forEach(span => {
+            span.innerText = basketCount;
+        });
+    }
+    
+    function assignDataIds() {
+        let productCards = document.querySelectorAll('.product-card');
+        productCards.forEach((card, index) => {
+            card.dataset.id = index + 1;
+        });
+    }
+    
+    document.querySelectorAll(".card-action .basket").forEach(btn => {
+        btn.addEventListener("click", function (e) {
+            let productId = parseInt(this.parentNode.parentNode.parentNode.getAttribute("data-id"));
+            let productName = this.parentNode.parentNode.nextElementSibling.firstElementChild.nextElementSibling.innerText;       
+            let productImage = this.parentNode.nextElementSibling.getAttribute("src");        
+            let productPrice = parseFloat(this.parentNode.parentNode.nextElementSibling.lastElementChild.lastElementChild.textContent);
+            
+            let existProduct = basket.find(m => m.id == productId);
+    
+            if (existProduct !== undefined) {
+                existProduct.count++;
+            } else {
+                basket.push({
+                    id: productId,
+                    name: productName,
+                    image: productImage,
+                    price: productPrice,
+                    count: 1
+                });
+            }
+    
+            updateBasketCount();
+            localStorage.setItem("basket", JSON.stringify(basket));
+        });
+    });
+
+    document.querySelectorAll(".card-action .basket").forEach(btn => {
+        btn.addEventListener("click", function (e) {          
+            this.style.backgroundColor = "#0989FF";   
+            let basketImg = this.querySelector("img");
+            basketImg.style.filter = "invert(100%)";
+    
+        });
+    });
+    
+    //wishlist
+    let wishlist = [];
+    let wishlistCount = 0; 
+    
+    if (JSON.parse(localStorage.getItem("wishlist")) !== null) {
+        wishlist = JSON.parse(localStorage.getItem("wishlist"));
+        wishlistCount = wishlist.length;
+        updateWishlistCount();
+    }
+    
+    function updateWishlistCount() {
+        document.querySelectorAll(".count-wish span").forEach(span => {
+            span.innerText = wishlistCount;
+        });
+    }
+    
+    
+    document.querySelectorAll(".card-action .heart").forEach((heart, index) => {
+        heart.addEventListener("click", function (e) {
+            let productId = index + 1;
+            let existingIndex = wishlist.findIndex(item => item.id === productId);
+    
+            if (existingIndex !== -1) {
+                wishlist.splice(existingIndex, 1);
+                wishlistCount--;
+            } else {
+                wishlist.push({ id: productId });
+                wishlistCount++;
+            }
+    
+            updateWishlistCount(); 
+            localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        });
+    });
+    
+    document.querySelectorAll(".card-action .heart").forEach(btn => {
+        btn.addEventListener("click", function (e) {          
+            this.style.backgroundColor = "#0989FF";   
+            let wishlistImg = this.querySelector("img");
+            wishlistImg.style.filter = "invert(100%)";
+    
+        });
+    });
+
+        assignDataIds();
+        updateBasketCount();
+    
+
+
+
+
+
+

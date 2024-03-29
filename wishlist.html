@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charse="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,9 +25,10 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./assets/css/cart.css">
+    <link rel="stylesheet" href="./assets/css/wishlist.css">
     <link rel="icon" type="image/x-icon" href="./assets/images/shofy.png">
 </head>
+
 
 <body>
     <header>
@@ -33,7 +37,7 @@
                 <div class="row">
                     <div class="col-7">
                         <div class="shop-menu">
-                            <a href="./home.html"> <img src="./assets/images/logo.svg" alt=""></a>
+                           <a href="./home.html"> <img src="./assets/images/logo.svg" alt=""></a>
                             <div class="nav">
                                 <nav class="navbar">
                                     <ul class="navbar-menu">
@@ -100,11 +104,12 @@
                                         <li><a href="">Contact</a></li>
                                     </ul>
                                 </nav>
-
+                                <div class="col-6">
+                                </div>
                             </div>
                         </div>
                     </div>
-
+    
                     <div class="col-5">
                         <div class="shop-header-right">
                             <div class="shop-search">
@@ -113,7 +118,7 @@
                             </div>
                             <div class="wish-basket">
                                 <img src="./assets/images/svg-image-4.svg" alt="">
-                                <div class="heart"><img src="./assets/images/svg-image-5.svg" alt="">
+                                <div class="heart"><a href="./wishlist.html"><img src="./assets/images/svg-image-5.svg" alt=""></a>
                                     <div class="count-wish"><span>0</span></div>
                                 </div>
                                 <div class="basket"><img src="./assets/images/svg-image-6.svg" alt="">
@@ -170,7 +175,7 @@
                                         <li><a href="">Logout</a></li>
                                     </ul>
                                 </li>
-
+    
                             </ul>
                         </div>
                     </div>
@@ -182,7 +187,7 @@
                 <div class="row">
                     <div class="col-7">
                         <div class="shop-menu">
-                            <a href="./index.html"> <img src="./assets/images/logo.svg" alt=""></a>
+                          <a href="./index.html">  <img src="./assets/images/logo.svg" alt=""></a>
                             <div class="nav">
                                 <nav class="navbar">
                                     <ul class="navbar-menu">
@@ -254,7 +259,7 @@
                             </div>
                         </div>
                     </div>
-
+    
                     <div class="col-5">
                         <div class="shop-header-right">
                             <div class="shop-search">
@@ -263,7 +268,7 @@
                             </div>
                             <div class="wish-basket">
                                 <img src="./assets/images/svg-image-4.svg" alt="">
-                                <div class="heart"><img src="./assets/images/svg-image-5.svg" alt="">
+                                <div class="heart"><a href="./wishlist.html"><img src="./assets/images/svg-image-5.svg" alt=""></a>
                                     <div class="count-wish"><span>0</span></div>
                                 </div>
                                 <div class="basket"><img src="./assets/images/svg-image-6.svg" alt="">
@@ -277,144 +282,142 @@
         </div>
     </header>
     <main>
-       <section id="cart-page">
-          <div class="cart-title">
-            <div class="page-title">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="title">
-                                <h3>Shopping Cart</h3>
-                                <div class="title-down">
-                                    <a href="">Home</a>
-                                    <span>Shopping Cart</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <section id="cart-page">
+            <div class="cart-title">
+              <div class="page-title">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-12">
+                              <div class="title">
+                                  <h3>Wishlist</h3>
+                                  <div class="title-down">
+                                      <a href="">Home</a>
+                                      <span>Wishlist</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
             </div>
-          </div>
-       </section>
-       <section id="shopping-cart">
-        <div class="container">
-            <div class="col-12 col-sm-12 col-md-8">
-                <div class="product-tables ">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="product" colspan="2">Product</th>
-                                <th class="price">Price</th>
-                                <th class="quantity">Quatity</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                           
-                        </tbody>
-                    </table>
-                </div>
-               
-            </div>
-            <div class="col-12 col-sm-12 col-md-4"></div>
-        </div>
-        <div class="empty-table text-center d-none">
-            <h4>No Cart Items Found</h4>
-            <button>Continue Shopping</button>
-        </div>
-       </section>
-
-        <footer>
-            <div class="footer-area">
-                <div class="footer-top">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-4">
-                                <div class="footer-widget">
-                                    <div class="footer-logo">
-                                        <img src="./assets/images/logo.svg" alt="">
-                                    </div>
-                                    <p>We are a team of designers and developers that create high quality WordPress</p>
-                                    <div class="footer-social">
-                                        <div class="social"><i class="fa-brands fa-facebook-f"></i></div>
-                                        <div class="social"><i class="fa-brands fa-twitter"></i></div>
-                                        <div class="social"><i class="fa-brands fa-linkedin-in"></i></div>
-                                        <div class="social"><i class="fa-brands fa-vimeo-v"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-2">
-                                <div class="footer-title">
-                                    <h4>My Account</h4>
-                                    <div class="footer-list">
-                                        <ul>
-                                            <li><a href="">Track Orders</a></li>
-                                            <li><a href="">Shipping</a></li>
-                                            <li><a href="">Wishlist</a></li>
-                                            <li><a href="">My Account</a></li>
-                                            <li><a href="">Order History</a></li>
-                                            <li><a href="">Returns</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-3">
-                                <div class="footer-title">
-                                    <h4>Information</h4>
-                                    <div class="footer-list">
-                                        <ul>
-                                            <li><a href="">Our Story</a></li>
-                                            <li><a href="">Careers</a></li>
-                                            <li><a href="">Privacy Policy</a></li>
-                                            <li><a href="">Terms & Conditions</a></li>
-                                            <li><a href="">Latest News</a></li>
-                                            <li><a href="">Contact Us</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-3">
-                                <div class="footer-title">
-                                    <h4>Talk To Us</h4>
-                                    <div class="content">
-                                        <div class="footer-talk">
-                                            <span>Got Questions? Call us</span>
-                                            <h4>+670 413 90 762</h4>
-                                        </div>
-                                        <div class="footer-contact">
-                                            <img src="./assets/images/svg-36.svg" alt="">
-                                            <span>shofy@support.com</span>
-                                        </div>
-                                        <div class="footer-contact">
-                                            <img src="./assets/images/svg-37.svg" alt="">
-                                            <span class="c2">79 Sleepy Hollow St.
-                                                Jamaica, New York 1432</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+         </section>
+         <section id="shopping-cart">
+            <div class="container">
+                <div class="col-12 col-sm-12 col-md-12">
+                    <div class="product-tables ">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="product" colspan="2">Product</th>
+                                    <th class="price">Price</th>
+                                    <th class="quantity">Add Cart</th>
+                                    <th class="action">Action</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                            </tbody>
+                        </table>
                     </div>
+                   
                 </div>
-                <div class="footer-bottom">
-                    <div class="container">
-                        <div class="bottom">
+              
+            <div class="empty-table text-center ">
+                <h4>No Wishlist Items Found</h4>
+                <button>Continue Shopping</button>
+            </div>
+           </section>
+         
+            <footer>
+                <div class="footer-area">
+                    <div class="footer-top">
+                        <div class="container">
                             <div class="row">
-                                <div class="col-6"><span>© 2024 All Rights Reserved | Angular Template by </span> <a
-                                        href="">Themepure</a></div>
-                                <div class="col-6">
-                                    <div class="footer-payment">
-                                        <img src="./assets/images/footer-pay.png" alt="">
+                                <div class="col-12 col-sm-6 col-md-4">
+                                    <div class="footer-widget">
+                                        <div class="footer-logo">
+                                            <img src="./assets/images/logo.svg" alt="">
+                                        </div>
+                                        <p>We are a team of designers and developers that create high quality WordPress</p>
+                                        <div class="footer-social">
+                                            <div class="social"><i class="fa-brands fa-facebook-f"></i></div>
+                                            <div class="social"><i class="fa-brands fa-twitter"></i></div>
+                                            <div class="social"><i class="fa-brands fa-linkedin-in"></i></div>
+                                            <div class="social"><i class="fa-brands fa-vimeo-v"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-2">
+                                    <div class="footer-title">
+                                        <h4>My Account</h4>
+                                        <div class="footer-list">
+                                            <ul>
+                                                <li><a href="">Track Orders</a></li>
+                                                <li><a href="">Shipping</a></li>
+                                                <li><a href="">Wishlist</a></li>
+                                                <li><a href="">My Account</a></li>
+                                                <li><a href="">Order History</a></li>
+                                                <li><a href="">Returns</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-3">
+                                    <div class="footer-title">
+                                        <h4>Information</h4>
+                                        <div class="footer-list">
+                                            <ul>
+                                                <li><a href="">Our Story</a></li>
+                                                <li><a href="">Careers</a></li>
+                                                <li><a href="">Privacy Policy</a></li>
+                                                <li><a href="">Terms & Conditions</a></li>
+                                                <li><a href="">Latest News</a></li>
+                                                <li><a href="">Contact Us</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-3">
+                                    <div class="footer-title">
+                                        <h4>Talk To Us</h4>
+                                        <div class="content">
+                                            <div class="footer-talk">
+                                                <span>Got Questions? Call us</span>
+                                                <h4>+670 413 90 762</h4>
+                                            </div>
+                                            <div class="footer-contact">
+                                                <img src="./assets/images/svg-36.svg" alt="">
+                                                <span>shofy@support.com</span>
+                                            </div>
+                                            <div class="footer-contact">
+                                                <img src="./assets/images/svg-37.svg" alt="">
+                                                <span class="c2">79 Sleepy Hollow St.
+                                                    Jamaica, New York 1432</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="container">
+                            <div class="bottom">
+                                <div class="row">
+                                    <div class="col-6"><span>© 2024 All Rights Reserved | Angular Template by </span> <a
+                                            href="">Themepure</a></div>
+                                    <div class="col-6">
+                                        <div class="footer-payment">
+                                            <img src="./assets/images/footer-pay.png" alt="">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
     </main>
-
-    <script src="./assets/js/cart.js"></script>
+    <script src="./assets/js/wishlist.js"></script>
 </body>
