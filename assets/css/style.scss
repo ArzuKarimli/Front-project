@@ -1262,7 +1262,7 @@ body {
                 border-bottom-left-radius: 8px;
                 padding: 29px 15px;
                 display: flex;
-
+                    flex-wrap: wrap;
                 .feature-box-img {
                     width: 33px;
                     height: 29px;
@@ -1376,7 +1376,7 @@ body {
         .trend-products {
             margin-top: 30px;
             display: none;
-
+             flex-wrap: wrap;
 
             .product-card {
                 width: 261px;
